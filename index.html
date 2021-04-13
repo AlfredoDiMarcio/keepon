@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","errorBeacon":"bam-cell.nr-data.net","licenseKey":"NRJS-a7dc77dafac13d7c041","applicationID":"233020379","transactionName":"IAxZFhQLDlxXFBpZVAwWQz0WBQVVQUlGUFkU","queueTime":1,"applicationTime":63,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-a7dc77dafac13d7c041",applicationID:"233020379"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(7),c=e(8),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(9);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e){return!(!e||!e.protocol||"file:"===e.protocol)}t.exports=r},{}],4:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var t=Math.round(e.timeStamp),n={type:e.type};t<=p.now()?n.fid=p.now()-t:t>p.offset&&t<=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(6),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,w=["click","keydown","mousedown","pointerdown","touchstart"];w.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],5:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],6:[function(e,t,n){function r(e){function t(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],7:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&&(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],8:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i<0?0:i);++r<i;)o[r]=e[t+r];return o}t.exports=r},{}],9:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&&e instanceof r?e:e?u(e,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){e&&a&&e(n,r,i);for(var c=t(i),f=v(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[h[n]];return p&&p.push([b,n,r,c]),c}}function o(e,t){y[e]=v(e).concat(t)}function m(e,t){var n=y[e];if(n)for(var r=0;r<n.length;r++)n[r]===t&&n.splice(r,1)}function v(e){return y[e]||[]}function g(e){return p[e]=p[e]||i(n)}function w(e,t){s(e,function(e,n){t=t||"feature",h[n]=t,t in d||(d[t]=[])})}var y={},h={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:w,abort:c,aborted:!1};return b}function o(e){return u(e,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=e("gos"),s=e(7),d={},p={},l=t.exports=i();t.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!E++){var e=x.info=NREUM.info,t=l.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return u.abort();f(h,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+x.offset],null,"api"),c("timing",["load",n]);var r=l.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===l.readyState&&o()}function o(){c("mark",["domContent",a()+x.offset],null,"api")}var a=e(2),c=e("handle"),f=e(7),u=e("ee"),s=e(5),d=e(3),p=window,l=p.document,m="addEventListener",v="attachEvent",g=p.XMLHttpRequest,w=g&&g.prototype;if(d(p.location)){NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:g,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var y=""+location,h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1208.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=t.exports={offset:a.getLastTimestamp(),now:a,origin:y,features:{},xhrWrappable:b,userAgent:s};e(1),e(4),l[m]?(l[m]("DOMContentLoaded",o,!1),p[m]("load",r,!1)):(l[v]("onreadystatechange",i),p[v]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0}},{}],"wrap-function":[function(e,t,n){function r(e,t){function n(t,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],e)}c(n+"start",[o,a,f],s,u);try{return p=t.apply(a,o)}catch(m){throw c(n+"err",[o,a,m],s,u),m}finally{c(n+"end",[o,a,p],s,u)}}return a(t)?t:(n||(n=""),nrWrapper[p]=t,o(t,nrWrapper,e),nrWrapper)}function r(e,t,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<t.length;u++)f=t[u],c=e[f],a(c)||(e[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!m||t){var c=m;m=!0;try{e.emit(n,r,o,t,a)}catch(f){i([f,n,r,o],e)}m=c}}return e||(e=s),n.inPlace=r,n.flag=p,n}function i(e,t){t||(t=s);try{t.emit("internal-error",e)}catch(n){}}function o(e,t,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(e);return r.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(o){i([o],n)}for(var a in e)l.call(e,a)&&(t[a]=e[a]);return t}function a(e){return!(e&&e instanceof Function&&e.apply&&!e[p])}function c(e,t){var n=t(e);return n[p]=e,o(e,n,s),n}function f(e,t,n){var r=e[t];e[t]=c(r,n)}function u(){for(var e=arguments.length,t=new Array(e),n=0;n<e;++n)t[n]=arguments[n];return t}var s=e("ee"),d=e(8),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;t.exports=r,t.exports.wrapFunction=c,t.exports.wrapInPlace=f,t.exports.argsToArray=u},{}]},{},["loader"]);</script>
+  <link href="css/css.css" rel="stylesheet">
+	<link rel="stylesheet" media="all" href="css/application-1bd07ffd2b2c948f12c8cdf51b53aa383847287de7896c42387373da438025f9.css">
+  
+ <!-- begin analytics --> 
+<script>
+//<![CDATA[
+window.universal_variable = {
+  "page": "about_pages.show"
+};
+
+//]]>
+</script> 
+      
+        <script type="text/javascript">
+          dataLayer = window.dataLayer || [];
+          dataLayer.push({
+  "contentGroup": "<span class=\"translation_missing\" title=\"translation missing: en.seo_mo.about_pages.show.page_type\">Page Type</span>"
+});
+
+        </script>
+      
+      
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new
+      Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f)
+      ;})(window,document,'script','dataLayer','GTM-KM4K4WH');</script>
+    
+      
+      <!-- Anti-flicker snippet (recommended)  -->
+      <style>.async-hide { opacity: 0 !important} </style>
+      <script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+      h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+      (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+      })(window,document.documentElement,'async-hide','dataLayer',4000,
+      {'GTM-KM4K4WH':true});</script>
+    
+      
+    
+ <!-- end analytics --> 
+
+  
+ <!-- begin permutive --> 
+
+            <script>!function(n,e,o,r,i){if(!e){e=e||{},window.permutive=e,e.q=[],e.config=i||{},e.config.projectId=o,e.config.apiKey=r,e.config.environment=e.config.environment||"production";
+            for(var t=["addon","identify","track","trigger","query","segment","segments","ready","on","once","user","consent"],c=0;c<t.length;c++){var f=t[c];e[f]=function(n){return function(){var o=Array.prototype.slice.call(arguments,0);e.q.push({functionName:n,arguments:o})}}(f)}}}(document,window.permutive,"e43c8a90-d17b-4790-bfda-81b069b3b8c2","a16e1c74-ec2b-43ba-8ce3-3849bdc48bc2",{});</script>
+            <script async src="js/e43c8a90-d17b-4790-bfda-81b069b3b8c2-web.js"></script>
+        
+            <script>
+            window.permutive.addon('web', { 
+                site: "TUG",
+                page: {"page_type":"about_pages"}
+            });   
+            </script>                        
+        
+ <!-- end permutive --> 
+
+	<link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon-180x180.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#ffffff">
+  <title>List of Universities &amp; Colleges in the UK | Which? - The Uni Guide</title><meta NAME="Description" CONTENT=" Find the university or college you want to study at in our full A-Z directory. Our list of UK universities can help you explore the options for your course."><link rel="canonical" href="https://www.theuniguide.co.uk/about/universities">
+<meta name="title" content="List of Universities &amp; Colleges in the UK | Which? - The Uni Guide"><meta name="language" content="en"><meta name="country" content="GB"><meta http-equiv="imagetoolbar" content="no"><meta name="robots" content="index,follow"><meta name="googlebot" content="index,follow">
+  <!--[if IE ]>
+  <link rel="stylesheet" media="all" href="https://cdn.theuniguide.co.uk/assets/legacy/ie-dcf2c992baa088809b238666255b0bfe4dd0924930b730cb6fd6914c78b998a3.css" />
+  <![endif]-->
+  <!--[if IE 9]>
+  <link rel="stylesheet" media="all" href="https://cdn.theuniguide.co.uk/assets/legacy/ie9-dcf2c992baa088809b238666255b0bfe4dd0924930b730cb6fd6914c78b998a3.css" />
+  <![endif]-->
+  <!--[if lt IE 9]>
+  <link rel="stylesheet" media="all" href="https://cdn.theuniguide.co.uk/assets/legacy/lt-ie9-dcf2c992baa088809b238666255b0bfe4dd0924930b730cb6fd6914c78b998a3.css" />
+  <![endif]-->
+  <!--[if lt IE 8]>
+  <link rel="stylesheet" media="all" href="https://cdn.theuniguide.co.uk/assets/legacy/lt-ie8-dcf2c992baa088809b238666255b0bfe4dd0924930b730cb6fd6914c78b998a3.css" />
+  <![endif]-->
+  
+  <meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="xFD8n2F-5SPy_MLb2u6GksyKUbKwk4p7q1TYxnkTPCRLFj9vzhbhGSnxLYrCZu8R2feJY18D0FIrZMZApAGgqw">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="msvalidate.01" content="3F6CB605329BC8ECE3A112C34EA9C4F8">
+  <script src="js/client-bundle-66aa59e8f634a20d387e.js"></script>
+  <link rel="stylesheet" media="screen" href="css/client-bundle-a422bb07.css">
+</head>
+<body class="about_page-body show-body no-js themed-as-general">
+  <script>(function(e,t){e.className=e.className.replace("no-js",t)})(document.body,"js")</script>
+  
+    <div class="srw-transitional-message">
+  <p class="srw-transitional-message-info">
+    The page you are visiting was formerly part of the Which? University website, but is now being provided by The Uni Guide &mdash; part of The Student Room.
+    For more information please <a href="/about" class="srw-transitional-message-action" target="_blank">click here</a>.
+  </p>
+</div>
+  <div class="cookies-eu js-cookies-eu">
+    <span class="cookies-eu-content-holder">Cookies help us deliver our services. By using our services, you agree to our use of cookies.</span>
+    <span class="cookies-eu-button-holder">
+    <button class="cookies-eu-ok js-cookies-eu-ok"> OK </button>
+      <a href="/about/cookie-policy" class="cookies-eu-link" target="_blank"> Learn more </a>
+    </span>
+  </div>
+
+<!--[if IE ]>
+<div id="ie-compatibility-message">
+  <div class="grid">It looks like you're using an older version of Internet Explorer, so unfortunately things might not be displaying as they should. To get the most out of the The Uni Guide website, please upgrade your internet browser or install an alternative free browser such as <a href="https://support.google.com/chrome/answer/95346?hl=en-GB">Google Chrome</a> or <a href="https://www.mozilla.org/en-GB/firefox/new/">Mozilla Firefox</a>.
+</div>
+</div>
+<![endif]-->
+<div class="navigation" id="stick_element"><div class="navigation__container grid"><div class="navigation__logo"><a href="/"><img alt="The Uni Guide logo" src="fonts/the-uni-guide-ecd92be0a64cf51bda4c1b48c1fd7daf59e55115a7574cb7b9e3ff1d89f13aa6.svg"></a></div><div class="navigation__logo--mobile"><a href="/"><img alt="The Uni Guide logo" src="fonts/the-uni-guide-ecd92be0a64cf51bda4c1b48c1fd7daf59e55115a7574cb7b9e3ff1d89f13aa6.svg"></a></div><div class="navigation__mobile toggle-down"><img alt="Menu" width="40px" height="40px" src="fonts/burger-menu-8ca711792cf59bf18cc8971182940db57aee45e3fceb0889111a594efe22ff03.svg"></div><ul class="navigation__links"><li class="navigation__link localnavigationitem-search-for-a-course-and-a-level-explorer-combo selected"><a href="/courses">Find a course<div class="arrow-down"></div><div class="arrow-up"></div></a><ul class="navigation__dropdown-container"><div class="dropdown"><div class="grid"><div class="dropdown__left-container"><a class="dropdown__title" data-top-nav="localnavigationitem-search-for-a-course-and-a-level-explorer-combo" href="/courses">Find a course</a><div class="dropdown__description">Search, shortlist and compare thousands of courses to find that perfect one.</div></div><div class="dropdown__right-container"><div class="dropdown__middle js-insane-alignable-element"><div class="dropdown__first"><div class="dropdown__subtitle">Search for a course</div><div class="dropdown__description">Personalise your search by expected grades and more.</div><a class="btn dropdown__button" data-top-nav="find-a-course" href="/courses">Start course search</a></div><div class="dropdown__second"><div class="dropdown__subtitle">A-level Explorer</div><div class="dropdown__description">See where your A-level subjects will lead you.</div><a class="btn dropdown__button" data-top-nav="find-a-course" href="/a-level-explorer">Get degree ideas</a></div></div><div class="dropdown__right js-insane-alignable-element"><div class="dropdown__subtitle">Popular subjects</div><ul class="dropdown__list"><li class="is-clickable"><a class="nav-recommendation-link" data-top-nav="find-a-course" data-top-nav-list="popular-subjects" data-top-nav-recommended-list-item-position="0" href="/subjects/medicine">Medicine</a></li><li class="is-clickable"><a class="nav-recommendation-link" data-top-nav="find-a-course" data-top-nav-list="popular-subjects" data-top-nav-recommended-list-item-position="1" href="/subjects/law">Law</a></li><li class="is-clickable"><a class="nav-recommendation-link" data-top-nav="find-a-course" data-top-nav-list="popular-subjects" data-top-nav-recommended-list-item-position="2" href="/subjects/biology">Biology</a></li><li class="is-clickable"><a class="nav-recommendation-link" data-top-nav="find-a-course" data-top-nav-list="popular-subjects" data-top-nav-recommended-list-item-position="3" href="/subjects/teacher-training">Teacher training</a></li><li class="is-clickable"><a class="nav-recommendation-link" data-top-nav="find-a-course" data-top-nav-list="popular-subjects" data-top-nav-recommended-list-item-position="4" href="/subjects/nursing">Nursing</a></li><li class="is-clickable"><a class="nav-recommendation-link" data-top-nav="find-a-course" data-top-nav-list="popular-subjects" data-top-nav-recommended-list-item-position="5" href="/subjects/midwifery">Midwifery</a></li></ul><a class="dropdown__button-all" data-top-nav="find-a-course" data-top-nav-list="popular-subjects" href="/courses#browse-subjects-alphabetically">Browse all subject guides</a></div></div></div></div></ul></li><li class="navigation__link localnavigationitem-search-for-a-university "><a href="/search/institution">Where to study<div class="arrow-down"></div><div class="arrow-up"></div></a><ul class="navigation__dropdown-container"><div class="dropdown"><div class="grid"><div class="dropdown__left-container"><a class="dropdown__title" data-top-nav="localnavigationitem-search-for-a-university" href="/search/institution">Where to study</a><div class="dropdown__description">See what makes a university special and discover where you belong.</div></div><div class="dropdown__right-container"><div class="dropdown__middle js-insane-alignable-element"><div class="dropdown__subtitle">Find a university</div><div class="dropdown__description">Search by name or city.</div><form class="ui-front formtastic i" novalidate="novalidate" action="/search/institution" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;"><li class="string input required stringish" id="i_q_input"><input placeholder="UEA, Leeds, London..." id="i_q" class="js-institution-menu-search dropdown__input" type="text" name="i[q]">
+
+</li><button class="dropdown__submit" data-disable-with data-top-nav="where-to-study" type="submit"><span class="icon-search dropdown__icon-search"></span></button></form></div><div class="dropdown__right js-insane-alignable-element"><div class="dropdown__subtitle">Popular universities</div><ul class="dropdown__list"><li class="is-clickable"><a class="nav-recommendation-link" data-top-nav="where-to-study" data-top-nav-list="popular-universities" data-top-nav-recommended-list-item-position="0" href="https://www.theuniguide.co.uk/university-college-london-university-of-london-u80">UCL (University College London)</a></li><li class="is-clickable"><a class="nav-recommendation-link" data-top-nav="where-to-study" data-top-nav-list="popular-universities" data-top-nav-recommended-list-item-position="1" href="https://www.theuniguide.co.uk/university-of-nottingham-n84">University of Nottingham</a></li><li class="is-clickable"><a class="nav-recommendation-link" data-top-nav="where-to-study" data-top-nav-list="popular-universities" data-top-nav-recommended-list-item-position="2" href="https://www.theuniguide.co.uk/university-of-leeds-l23">University of Leeds</a></li><li class="is-clickable"><a class="nav-recommendation-link" data-top-nav="where-to-study" data-top-nav-list="popular-universities" data-top-nav-recommended-list-item-position="3" href="https://www.theuniguide.co.uk/university-of-manchester-m20">University of Manchester</a></li><li class="is-clickable"><a class="nav-recommendation-link" data-top-nav="where-to-study" data-top-nav-list="popular-universities" data-top-nav-recommended-list-item-position="4" href="https://www.theuniguide.co.uk/university-of-bristol-b78">University of Bristol</a></li><li class="is-clickable"><a class="nav-recommendation-link" data-top-nav="where-to-study" data-top-nav-list="popular-universities" data-top-nav-recommended-list-item-position="5" href="https://www.theuniguide.co.uk/kings-college-london-university-of-london-k60">King&#39;s College London</a></li><li class="is-clickable"><a class="nav-recommendation-link" data-top-nav="where-to-study" data-top-nav-list="popular-universities" data-top-nav-recommended-list-item-position="6" href="https://www.theuniguide.co.uk/university-of-edinburgh-e56">The University of Edinburgh</a></li><li class="is-clickable"><a class="nav-recommendation-link" data-top-nav="where-to-study" data-top-nav-list="popular-universities" data-top-nav-recommended-list-item-position="7" href="https://www.theuniguide.co.uk/university-of-warwick-w20">University of Warwick</a></li></ul><a class="dropdown__button-all" data-top-nav="where-to-study" data-top-nav-list="popular-universities" href="https://www.theuniguide.co.uk/about/universities">All universities</a></div></div></div></div></ul></li><li class="navigation__link localnavigationitem-browse-advice "><a href="/advice">Get advice<div class="arrow-down"></div><div class="arrow-up"></div></a><ul class="navigation__dropdown-container"><div class="dropdown"><div class="grid"><div class="dropdown__left-container"><a class="dropdown__title" data-top-nav="localnavigationitem-browse-advice" href="/advice">Get advice</a><div class="dropdown__description">Get tips, tricks and wise words from students and experts at each stage.</div></div><div class="dropdown__right-container"><div class="dropdown__middle js-insane-alignable-element"><div class="dropdown__subtitle">Browse advice</div><ul class="dropdown__list"><li class="is-clickable"><a data-top-nav="get-advice" data-top-nav-list="browse-advice-category-pages" href="/advice/personal-statements">Personal statements</a></li><li class="is-clickable"><a data-top-nav="get-advice" data-top-nav-list="browse-advice-category-pages" href="/advice/student-finance">Student finance</a></li><li class="is-clickable"><a data-top-nav="get-advice" data-top-nav-list="browse-advice-category-pages" href="/advice/choosing-a-course">Choosing a course</a></li><li class="is-clickable"><a data-top-nav="get-advice" data-top-nav-list="browse-advice-category-pages" href="/advice/student-life">Student life</a></li><li class="is-clickable"><a data-top-nav="get-advice" data-top-nav-list="browse-advice-category-pages" href="/advice/a-level-choices">A-level choices</a></li><li class="is-clickable"><a data-top-nav="get-advice" data-top-nav-list="browse-advice-category-pages" href="/advice/gcse-choices-university">GCSE choices and university</a></li></ul><a class="dropdown__button-all" data-top-nav="get-advice" href="/advice">Browse all advice</a></div><div class="dropdown__right js-insane-alignable-element"><div class="dropdown__subtitle">Popular right now</div><ul class="dropdown__list"><li class="is-clickable"><a class="nav-recommendation-link" data-top-nav="get-advice" data-top-nav-list="popular-right-now" data-top-nav-recommended-list-item-position="0" href="https://www.theuniguide.co.uk/advice/revision-help/what-s-happening-with-gcse-a-level-and-btec-exams-in-2021">What&#39;s happening with the 2021 exam cancellations? </a></li><li class="is-clickable"><a class="nav-recommendation-link" data-top-nav="get-advice" data-top-nav-list="popular-right-now" data-top-nav-recommended-list-item-position="1" href="https://www.theuniguide.co.uk/advice/ucas-application/how-coronavirus-could-affect-your-2021-university-application-and-what-you-can-do-to-fix-it">Your 2021 uni application and Covid-19</a></li><li class="is-clickable"><a class="nav-recommendation-link" data-top-nav="get-advice" data-top-nav-list="popular-right-now" data-top-nav-recommended-list-item-position="2" href="https://www.theuniguide.co.uk/advice/personal-statements/personal-statement-secrets-universities-reveal-all">Personal statements - unis reveal all</a></li><li class="is-clickable"><a class="nav-recommendation-link" data-top-nav="get-advice" data-top-nav-list="popular-right-now" data-top-nav-recommended-list-item-position="3" href="https://www.theuniguide.co.uk/advice/ucas-application/how-to-write-your-university-application">How to write your uni application</a></li><li class="is-clickable"><a class="nav-recommendation-link" data-top-nav="get-advice" data-top-nav-list="popular-right-now" data-top-nav-recommended-list-item-position="4" href="https://www.theuniguide.co.uk/advice/ucas-application/when-will-you-hear-back-from-the-universities-youve-applied-to">How long does it take for universities to reply?</a></li><li class="is-clickable"><a class="nav-recommendation-link" data-top-nav="get-advice" data-top-nav-list="popular-right-now" data-top-nav-recommended-list-item-position="5" href="https://www.theuniguide.co.uk/advice/student-finance/how-student-finance-actually-works">How student finance actually works</a></li><li class="is-clickable"><a class="nav-recommendation-link" data-top-nav="get-advice" data-top-nav-list="popular-right-now" data-top-nav-recommended-list-item-position="6" href="https://www.theuniguide.co.uk/advice/a-level-choices/six-things-you-need-to-know-before-making-your-a-level-choices">A-levels – pick the right subjects</a></li><li class="is-clickable"><a class="nav-recommendation-link" data-top-nav="get-advice" data-top-nav-list="popular-right-now" data-top-nav-recommended-list-item-position="7" href="https://www.theuniguide.co.uk/advice/choosing-a-course/what-is-the-russell-group">Russell Group universities – what are they?</a></li><li class="is-clickable"><a class="nav-recommendation-link" data-top-nav="get-advice" data-top-nav-list="popular-right-now" data-top-nav-recommended-list-item-position="8" href="https://www.theuniguide.co.uk/advice/gcse-choices-university/how-important-are-my-gcse-grades">How important are your GCSE grades?</a></li><li class="is-clickable"><a class="nav-recommendation-link" data-top-nav="get-advice" data-top-nav-list="popular-right-now" data-top-nav-recommended-list-item-position="9" href="https://www.theuniguide.co.uk/advice/student-life/home-study-survival-tips">Home study survival tips</a></li></ul></div></div></div></div></ul></li></ul><a class="shortlist-link-container  js-shortlist-link-container is-empty has-not-more-than-min has-not-min-exactly" data-labels-prefix="My shortlist" data-labels-suffix="course" id="comparisons_cta" href="/shortlist"><div class="navigation__badge js-shortlisted-counter" data-badge="0" data-linked-element="js-shortlist-link-container"></div> </a><div class="navigation__search-box"><input id="header-search" placeholder="Search for courses, universities or advice..." type="text"></div></div><div class="navigation__overlay"></div><div aria-hidden="true" aria-labelledby="Search-Modal" class="navigation__search" data-reveal id="search-modal" role="dialog" style="display: none;"><div class="close-button"><a aria-label="Close" id="close-search-modal">×</a></div><div class="tabbed-search" data-page-type="about_page"><div class="preload-icons"></div><div style="background: url(images/check_true-e0668ff783997b0fbba5aaa4942823bd1765f29f88a60ff06fc6d371f8191468.png);"></div><div style="background: url(images/check_false-84dbdd0af9ad11cb4bb453e1e5f0b4f7b891bd186a3fe0ea1050fc19725b97ae.png);"></div><div style="background: url(images/cross-icon-513cbd628415899424bac8275d8a913ecd60c05532a95b03d3f199bf6c398137.png);"></div><ul class="tabs" data-tab><li class="tab-title active"><a href="#search-panel-course">Courses</a></li><li class="tab-title"><a href="#search-panel-institution">Universities</a></li><li class="tab-title"><a href="#search-panel-advice">Advice</a></li></ul><div class="tabs-content"><div class="content active" id="search-panel-course"><div class="flex-column"><label class="textbox-label">Course name eg psychology</label><form id="course_search_header" class data-page-type="about_page" action="/search/course" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;"><input placeholder="Search for courses" aria-label="Search for courses" class="js-course-search search-textbox js-search-input js-search-keypress" autocomplete="off" type="text" value name="c[q]"><button class="search-form-close-icon js-clear-text " type="reset"></button></form></div><div class="flex-column"><label class="textbox-label">Location: city, town or county</label><input name="c[geography][]" type="hidden" value><select form="course_search_header" class="js-geography visibility-hidden search-textbox-location" multiple="multiple" name="c[geography][]" id="c_geography"></select></div><div class="flex-column"><button class="search-form-button" data-disable-with="Search" form="course_search_header" type="submit">Search</button></div></div><div class="content" id="search-panel-institution"><div class="flex-column"><label class="textbox-label">University name or location</label><form id="institution_search_header" class="form-container__search-form" data-page-type="about_page" action="/search/institution" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;"><input placeholder="Search for universities" aria-label="Search for universities" class="js-institution-search search-textbox js-search-input js-search-keypress" autocomplete="off" type="text" value name="i[q]"><button class="search-form-close-icon js-clear-text " type="reset"></button></form></div><div class="flex-column"><button class="search-form-button" data-disable-with="Search" form="institution_search_header" type="submit">Search</button></div></div><div class="content" id="search-panel-advice"><div class="flex-column"><label class="textbox-label">Topic eg personal statements</label><form id="advice_search_header" class="form-container__search-form" data-page-type="about_page" action="/search/advice" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;"><input placeholder="Search for advice" aria-label="Search for advice" class="search-textbox js-search-input js-search-keypress" autocomplete="off" type="text" value name="a[q]"><button class="search-form-close-icon js-clear-text " type="reset"></button></form></div><div class="flex-column"><button class="search-form-button" data-disable-with="Search" form="advice_search_header" type="submit">Search</button></div></div></div></div></div></div>
+
+    <main>
+      <div class="about_page appContainer">
+
+        <div id="flash">
+        </div>
+        <div id="about"><div class="about-content"><div><div class="article"><div class="page-header"><div class="grid"><h1>List of universities and colleges in the UK</h1><h3>Find the university or college you want to study at in our full A-Z directory. Click through to see student satisfaction ratings, read student views and more.</h3></div></div><div class="grid"><div class="about-content-section"><p>This list of universities and colleges is in alphabetical order. Scroll down to the institution you&#39;re looking for.</p>
+
+<ul>
+	<li><a href="	https://www.theuniguide.co.uk/university-of-abertay-dundee-a30
+">Abertay University </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/aberystwyth-university-a40
+">Aberystwyth University </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/academy-of-contemporary-music-a48
+">Academy of Contemporary Music </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/accrington-and-rossendale-college-a44
+">Accrington and Rossendale College </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/amsterdam-fashion-academy-a57
+">Amsterdam Fashion Academy </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/anglia-ruskin-university-a60
+">Anglia Ruskin University </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/anglo-european-college-of-chiropractic-a65
+">Anglo European College of Chiropractic </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/rdi-r25
+">Arden University </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/arts-university-bournemouth-a66
+">Arts University Bournemouth </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/lca-business-school-london-l63
+">ARU London </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/askham-bryan-college-a70
+">Askham Bryan College </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/aston-university-a80
+">Aston University </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/bangor-university-b06
+">Bangor University </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/barking-and-dagenham-college-b11
+">Barking and Dagenham College </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/bath-spa-university-b20
+">Bath Spa University </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/berkshire-college-of-agriculture-b42
+">Berkshire College of Agriculture </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/bicton-college-b18
+">Bicton College </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/bimm-b39
+">BIMM </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/birkbeck-university-of-london-b24
+">Birkbeck, University of London </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/birmingham-city-university-b25
+">Birmingham City University </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/bishop-burton-college-b37
+">Bishop Burton College </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/bishop-grosseteste-university-b38
+">Bishop Grosseteste University </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/blackburn-college-b40
+">Blackburn College </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/blackpool-and-the-fylde-college-b41
+">Blackpool and the Fylde College </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/bournemouth-university-b50
+">Bournemouth University </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/bpp-university-college-b54
+">BPP University </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/bradford-college-b60
+">Bradford College </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/bridgwater-college-b70
+">Bridgwater and Taunton College </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/bristol-university-of-the-west-of-england-b80
+">Bristol, University West of England, (UWE) </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/british-college-of-osteopathic-medicine-b81
+">British College of Osteopathic Medicine </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/brunel-university-b84
+">Brunel University London </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/buckinghamshire-new-university-b94
+">Buckinghamshire New University </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/bury-college-b93
+">Bury College </a></li>
+	<li><a href="https://www.theuniguide.co.uk/university-of-the-arts-london-u65">Camberwell College of Arts, University of the Arts London </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/cambridge-school-of-visual-and-performing-arts-c06
+">Cambridge School of Visual and Performing Arts </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/canterbury-christ-church-university-c10
+">Canterbury Christ Church University </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/cardiff-metropolitan-university-uwic-c20
+">Cardiff Metropolitan University </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/cardiff-university-c15
+">Cardiff University </a></li>
+	<li><a href="https://www.theuniguide.co.uk/university-of-the-arts-london-u65">Central Saint Martins, University of the Arts London </a></li>
+	<li><a href="https://www.theuniguide.co.uk/university-of-the-arts-london-u65">Chelsea College of Arts, University of the Arts London </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/city-college-norwich-n82
+">Norwich, City College </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/city-of-bristol-college-b77
+">Bristol, City College </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/city-of-liverpool-college-l43
+">Liverpool College, City of </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/city-university-c60
+">City, University of London </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/cleveland-college-of-art-and-design-c71
+">Cleveland College of Art and Design </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/cliff-college-c72
+">Cliff College </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/coleg-llandrillo-cymru-l53
+">Coleg Llandrillo </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/coleg-menai-m65
+">Menai, Coleg </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/coleg-sir-gar-c22
+">Sir Gar, Coleg </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/college-of-agriculture-food-and-rural-enterprise-a45
+">College of Agriculture, Food and Rural Enterprise </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/college-of-west-anglia-w35
+">West Anglia, College of </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/cornwall-college-c78
+">Cornwall College </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/courtauld-institute-of-art-university-of-london-c80
+">Courtauld Institute of Art, University of London </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/coventry-university-c85
+">Coventry University </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/de-montfort-university-d26
+">De Montfort University </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/duchy-college-d55
+">Duchy College </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/durham-university-d86
+">Durham University </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/east-riding-college-e29
+">East Riding College </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/easton-college-e30
+">Easton and Otley College </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/edge-hill-university-e42
+">Edge Hill University </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/edinburgh-napier-university-e59
+">Edinburgh Napier University </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/escp-europe-business-school-e79
+">ESCP Europe Business School </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/european-school-of-osteopathy-e80
+">European School of Osteopathy </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/falmouth-university-f33
+">Falmouth University </a></li>
+	<li>Futureworks Manchester Media&nbsp;School</li>
+	<li><a href="	https://www.theuniguide.co.uk/glasgow-caledonian-university-g42
+">Glasgow Caledonian University </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/glasgow-school-of-art-g43
+">Glasgow School of Art </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/gloucestershire-college-g45
+">Gloucestershire College </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/glyndwr-university-g53
+">Glyndwr University, Wrexham </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/goldsmiths-university-of-london-g56
+">Goldsmiths, University of London </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/gsm-london-g74
+">London, GSM </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/guildford-college-g90
+">Guildford College </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/halesowen-college-h04
+">Halesowen College </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/harper-adams-university-h12
+">Harper Adams University </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/havering-college-of-further-and-higher-education-h14
+">Havering College of Further and Higher Education </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/hereford-college-of-arts-h18
+">Hereford College of Arts </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/heriot-watt-university-h24
+">Heriot-Watt University </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/holy-cross-sixth-form-college-and-university-centre-h51
+">Holy Cross College </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/hugh-baird-college-h65
+">Hugh Baird College </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/hull-college-h73
+">Hull College </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/hult-international-business-school-h76
+">Hult International Business School </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/imperial-college-london-i50
+">Imperial College London </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/institute-of-contemporary-music-performance-i25
+">Institute of Contemporary Music Performance </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/istituto-marangoni-i35
+">Istituto Marangoni London </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/keele-university-k12
+">Keele University </a></li>
+	<li><a href="https://www.theuniguide.co.uk/kensington-college-of-business-k15">Kensington College of Business</a></li>
+	<li><a href="	https://www.theuniguide.co.uk/kings-college-london-university-of-london-k60
+">King&#39;s College London, University of London </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/kingston-college-k83
+">Kingston College </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/kingston-university-k84
+">Kingston University </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/lakes-college-west-cumbria-l05
+">Lakes College West Cumbria </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/lancaster-university-l14
+">Lancaster University </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/leeds-metropolitan-university-l27
+">Leeds Beckett University </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/leeds-city-college-l21
+">Leeds City College </a></li>
+	<li><a href="https://www.theuniguide.co.uk/leeds-college-of-music-l31">Leeds College of Art </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/leeds-college-of-music-l30
+">Leeds College of Music </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/leeds-trinity-university-l24
+">Leeds Trinity University </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/lincoln-college-l42
+">Lincoln College </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/liverpool-hope-university-l46
+">Liverpool Hope University </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/liverpool-institute-for-performing-arts-l48
+">Liverpool Institute for Performing Arts </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/liverpool-john-moores-university-l51
+">Liverpool John Moores University </a></li>
+	<li><a href="https://www.theuniguide.co.uk/university-of-the-arts-london-u65">London College of Communication, University of the Arts London </a></li>
+	<li><a href="https://www.theuniguide.co.uk/university-of-the-arts-london-u65">London College of Fashion, University of the Arts London </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/london-college-uck-l62
+">London College, UCK </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/london-metropolitan-university-l68
+">London Metropolitan University </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/london-school-of-business-and-management-l73
+">London School of Business and Management </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/london-school-of-economics-and-political-science-university-of-london-l72
+">London School of Economics and Political Science, University of London </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/london-south-bank-university-l75
+">London South Bank University </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/loughborough-college-l77
+">Loughborough College </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/loughborough-university-l79
+">Loughborough University </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/manchester-college-m10
+">Manchester College </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/manchester-metropolitan-university-m40
+">Manchester Metropolitan University </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/middlesex-university-m80
+">Middlesex University </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/milton-keynes-college-m89
+">Milton Keynes College </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/mont-rose-college-of-management-and-sciences-m88
+">Mont Rose College of Management and Sciences </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/moulton-college-m93
+">Moulton College </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/myerscough-college-m99
+">Myerscough College </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/nazarene-theological-college-n11
+">Nazarene Theological College </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/new-college-durham-n28
+">Durham, New College </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/new-college-of-the-humanities-n53
+">New College of the Humanities </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/newcastle-college-n23
+">Newcastle College </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/newcastle-university-n21
+">Newcastle University </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/newham-college-london-n31
+">Newham College London </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/newman-university-n36
+">Newman University </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/norland-college-n52
+">Norland College Limited </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/north-lindsey-college-n64
+">North Lindsey College </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/northbrook-college-sussex-n41
+">Northbrook College Sussex </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/northumbria-university-n77
+">Northumbria University </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/norwich-university-of-the-arts-n39
+">Norwich University of the Arts </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/nottingham-trent-university-n91
+">Nottingham Trent University </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/neath-port-talbot-college-n13
+">NPTC Group </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/oxford-brookes-university-o66
+">Oxford Brookes University </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/pearson-college-pearson-education-ltd-p34
+">Pearson College London (including Escape Studios) </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/peter-symonds-college-p52
+">Peter Symonds College </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/plumpton-college-p59
+">Plumpton College </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/plymouth-college-of-art-p65
+">Plymouth College of Art </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/plymouth-marjon-university-st-mark-st-john-p63
+">Saint Mark and Saint John, University of </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/plymouth-university-p60
+">Plymouth University </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/point-blank-ltd-p73
+">Point Blank Ltd </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/queen-margaret-university-edinburgh-q25
+">Queen Margaret University, Edinburgh </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/queen-mary-university-of-london-q50
+">Queen Mary University of London </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/queens-university-belfast-q75
+">Queen&#39;s University Belfast </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/ravensbourne-r06
+">Ravensbourne </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/regents-university-london-r18
+">Regent&#39;s University London </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/richmond-the-american-international-university-in-london-r20
+">Richmond, The American International University in London </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/robert-gordon-university-r36
+">Robert Gordon University </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/rose-bruford-college-r51
+">Rose Bruford College </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/rotherham-college-of-arts-and-technology-r52
+">Rotherham College of Arts and Technology </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/royal-academy-of-dance-r55
+">Royal Academy of Dance </a></li>
+	<li><a href="https://www.theuniguide.co.uk/university-of-the-arts-london-u65">Royal Academy of Music, University of London </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/royal-agricultural-university-r54
+">Royal Agricultural University </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/royal-central-school-of-speech-and-drama-university-of-london-c35
+">Royal Central School of Speech and Drama </a></li>
+	<li><a href="https://www.theuniguide.co.uk/royal-college-of-music-r56-10007778">Royal College of Music </a></li>
+	<li><a href="https://www.theuniguide.co.uk/royal-conservatoire-of-scotland-r58">Royal Conservatoire of Scotland </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/royal-holloway-university-of-london-r72
+">Royal Holloway, University of London </a></li>
+	<li><a href="https://www.theuniguide.co.uk/royal-northern-college-of-music-r57">Royal Northern College of Music </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/royal-veterinary-college-university-of-london-r84
+">Royal Veterinary College, University of London </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/royal-welsh-college-of-music-and-drama-r86
+">Royal Welsh College of Music and Drama </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/ruskin-college-r90
+">Ruskin College </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/sandwell-college-of-further-and-higher-education-s08
+">Sandwell College of Further and Higher Education </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/selby-college-s06
+">Selby College </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/sheffield-college-s22
+">Sheffield College </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/sheffield-hallam-university-s21
+">Sheffield Hallam University </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/school-of-oriental-and-african-studies-university-of-london-s09
+">SOAS, University of London </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/solihull-college-s26
+">Solihull College </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/south-essex-college-of-further-and-higher-education-s43
+">South Essex College </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/south-thames-college-s50
+">South Thames College </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/southampton-solent-university-s30
+">Southampton Solent University </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/sparsholt-college-hampshire-s34
+">Sparsholt College, Hampshire </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/spurgeons-college-s57
+">Spurgeon&#39;s College </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/sruc-scotlands-rural-college-s01
+">SRUC Scotland&rsquo;s Rural College </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/st-georges-university-of-london-s49
+">Saint George&#39;s, University of London </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/st-marys-university-college-twickenham-s64
+">Twickenham, Saint Mary&#39;s University </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/staffordshire-university-s72
+">Staffordshire University </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/stockport-college-s76
+">Stockport College </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/stranmillis-university-college-s79
+">Stranmillis University College </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/sussex-coast-college-hastings-s83
+">Sussex Coast College Hastings </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/swansea-university-s93
+">Swansea University </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/teesside-university-t20
+">Teesside University </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/ifs-school-of-finance-i55
+">The London Institute of Banking &amp; Finance (formerly ifs University College) </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-of-law-l17
+">University of Law </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-of-manchester-m20
+">Manchester, The University of </a></li>
+	<li><a href="https://www.theuniguide.co.uk/trinity-laban-conservatoire-of-music-and-dance-t75">Trinity Laban Conservatoire of Music and Dance </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/truro-and-penwith-college-t85
+">Truro and Penwith College </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-college-london-university-of-london-u80
+">UCL (University College London) </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-of-ulster-u20
+">Ulster, University of </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/barnsley-college-b13
+">University Campus Barnsley </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-campus-oldham-o10
+">Oldham, University Campus </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/colchester-institute-c75
+">University Centre Colchester at Colchester Institute </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-centre-croydon-c92
+">Croydon, University Centre </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/farnborough-college-of-technology-f66
+">Farnborough, University Centre </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/grimsby-institute-of-further-and-higher-education-g80
+">Grimsby, University Centre </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/hartpury-college-h22
+">University Centre Hartpury </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-centre-peterborough-p56
+">Peterborough, University Centre </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/reaseheath-college-r14
+">University Centre Reaseheath </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/st-helens-college-s51
+">St Helens, University Centre </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-college-birmingham-b35
+">Birmingham, University College </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/college-of-estate-management-e76
+">University College of Estate Management </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-for-the-creative-arts-c93
+">University for the Creative Arts </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-of-aberdeen-a20
+">Aberdeen, University of </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-of-bath-b16
+">Bath, University of </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-of-bedfordshire-b22
+">Bedfordshire, University of </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-of-birmingham-b32
+">Birmingham, University of </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-of-bolton-b44
+">Bolton, University of </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-of-bradford-b56
+">Bradford, University of </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-of-brighton-b72
+">Brighton, University of </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-of-bristol-b78
+">Bristol, University of </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-of-buckingham-b90
+">Buckingham, University of </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-of-cambridge-c05
+">Cambridge, University of </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-of-central-lancashire-c30
+">Central Lancashire, University of </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-of-chester-c55
+">Chester, University of </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-of-chichester-c58
+">Chichester, University of </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-of-cumbria-c99
+">Cumbria, University of </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-of-derby-d39
+">Derby, University of </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-of-dundee-d65
+">Dundee, University of </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-of-east-anglia-uea-e14
+">East Anglia, University of </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-of-east-london-e28
+">East London, University of </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-of-edinburgh-e56
+">Edinburgh, University of </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-of-essex-e70
+">Essex, University of </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-of-exeter-e84
+">Exeter, University of </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-of-glasgow-g28
+">Glasgow, University of </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-of-gloucestershire-g50
+">Gloucestershire, University of </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-of-greenwich-g70
+">Greenwich, University of </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-of-hertfordshire-h36
+">Hertfordshire, University of </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-of-huddersfield-h60
+">Huddersfield, University of </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-of-hull-h72
+">Hull, University of </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-of-kent-k24
+">Kent, University of </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-of-leeds-l23
+">Leeds, University of </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-of-leicester-l34
+">Leicester, University of </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-of-lincoln-l39
+">Lincoln, University of </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-of-liverpool-l41
+">Liverpool, University of </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-of-london-institute-in-paris-p26
+">University of London Institute in Paris </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-of-northampton-n38
+">Northampton, University of </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-of-nottingham-n84
+">Nottingham, University of </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-of-oxford-o33
+">Oxford, University of </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-of-portsmouth-p80
+">Portsmouth, University of </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-of-reading-r12
+">Reading, University of </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-of-roehampton-r48
+">Roehampton, University of </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-of-salford-s03
+">Salford, University of </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-of-sheffield-s18
+">Sheffield, University of </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-of-south-wales-w01
+">South Wales, University of </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-of-southampton-s27
+">Southampton, University of </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-of-st-andrews-s36
+">Saint Andrews, University of </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-of-stirling-s75
+">Stirling, University of </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-of-strathclyde-s78
+">Strathclyde, University of </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-campus-suffolk-s82
+">University of Suffolk </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-of-sunderland-s84
+">Sunderland, University of </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-of-surrey-s85
+">Surrey, University of </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-of-sussex-s90
+">Sussex, University of </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-of-the-highlands-and-islands-h49
+">Highlands and Islands, University of </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-of-the-west-of-scotland-u40
+">West of Scotland, University of the </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-of-wales-trinity-saint-david-t80
+">University of Wales Trinity Saint David </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-of-warwick-w20
+">Warwick, University of </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-of-west-london-w05
+">West London, University of </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-of-westminster-w50
+">Westminster, University of </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-of-winchester-w76
+">Winchester, University of </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-of-wolverhampton-w75
+">Wolverhampton, University of </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-of-worcester-w80
+">Worcester, University of </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/university-of-york-y50
+">York, University of </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/wakefield-college-w08
+">Wakefield College </a></li>
+	<li><a href="https://www.theuniguide.co.uk/wcg-w25">Warwickshire College</a></li>
+	<li><a href="https://www.theuniguide.co.uk/university-of-the-arts-london-u65">Wimbledon College of Arts, University of the Arts London </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/wirral-metropolitan-college-w73
+">Wirral Metropolitan College </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/writtle-college-w85
+">Writtle University College </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/york-college-y70
+">York College </a></li>
+	<li><a href="	https://www.theuniguide.co.uk/york-st-john-university-y75
+">York Saint John University </a></li>
+</ul>
+</div>
+      <div class="sidebar">
+        <h3>About us</h3>
+        <ul class="outer"><li class="inner"><a href="/about">About us</a></li><li class="inner"><a href="/about/contact-us">Contact us</a></li><li class="inner"><a href="/about/cookie-policy">Cookie policy</a></li><li class="inner"><a href="/about/universities">List of universities and colleges</a></li><li class="inner"><a href="/about/privacy-policy">Privacy policy</a></li><li class="inner"><a href="/about/terms-and-conditions">Terms and conditions</a></li><li class="inner"><a href="/about/where-we-get-our-info">Where we get our info</a></li><li class="inner"><a href="/about/who-we-work-with">Who we work with</a></li></ul>
+      </div>
+    </div><!-- /row -->
+  </div><!-- /container -->
+</div><!-- /about -->
+</div></div></div>
+    
+  </main>
+  <div class="footer"><div class="footer-container"><div class="grid--gutter footer--advice"><h2>Browse expert advice</h2><ul class="tag-words"><li><a href="/advice/personal-statements">Personal statements</a></li><li><a href="/advice/student-finance">Student finance</a></li><li><a href="/advice/choosing-a-course">Choosing a course</a></li><li><a href="/advice/student-life">Student life</a></li><li><a href="/advice/a-level-choices">A-level choices</a></li><li><a href="/advice/gcse-choices-university">GCSE choices and university</a></li><li><a href="/advice/preparing-for-university">Preparing for university</a></li><li><a href="/advice/student-accommodation">Student accommodation</a></li><li><a href="/advice/clearing-results-day">Clearing and results day</a></li><li><a href="/advice/ucas-application">Ucas application</a></li><li><a href="/advice/open-days">University open days</a></li><li><a href="/advice/advice-for-parents">Advice for parents</a></li></ul></div><div class="grid--gutter"><div class="grid--4of12 footer--about"><h5>About this site</h5><ul class="outer"><li class="inner"><a href="/about">About us</a></li><li class="inner"><a href="/about/contact-us">Contact us</a></li><li class="inner"><a href="/about/cookie-policy">Cookie policy</a></li><li class="inner"><a href="/about/universities">List of universities and colleges</a></li><li class="inner"><a href="/about/privacy-policy">Privacy policy</a></li><li class="inner"><a href="/about/terms-and-conditions">Terms and conditions</a></li><li class="inner"><a href="/about/where-we-get-our-info">Where we get our info</a></li><li class="inner"><a href="/about/who-we-work-with">Who we work with</a></li></ul></div><div class="grid--4of12 footer--tools"><h5>Popular tools and features</h5><ul class="outer"><li class="inner"><a href="/a-level-explorer">A-level Explorer</a></li><li class="inner"><a href="/courses">Course search</a></li></ul></div><div class="grid--4of12 footer--work"><h5>Who we work with</h5><ul class="logos--left"><li><a href="https://www.ucas.com/"><img src="images/ucas-3f90b0b1f3c72ebc8c62e68571d9c146237bdf9957afed16e020a73f12650830.png"></a></li><li><a href="http://www.hesa.ac.uk/"><img src="images/HESA_logo-5eca8aba17975f38f93b6de41f8d2884e288031fc96355a34b1130db96575867.png"></a></li></ul><a class="with-arrow-right" href="/about/who-we-work-with">Find out more</a></div></div></div></div>
+  <script src="js/application-e9cae9c64c7b191ad9fd2a9276d02ed3e077c4301d1eb461f0b7e4e60683ef1b.js"></script>
+  <script>
+    $(document).ready(function () {
+      
+    });
+  </script>
+  
+  
+</body>
+</html>
